@@ -73,13 +73,13 @@ header .container .btn-mobile {
 }
 
 /*------ SECTION SHOWCASE----------*/
-.showcase {
+#showcase {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 230px;
 }
 
-    .showcase .container {
+    #showcase .container {
         position: relative;
         display: flex;
         justify-content: start;
@@ -113,7 +113,9 @@ header .container .btn-mobile {
 
 
 @media screen and (max-width: 1200px) {
-    .showcase {
+    
+    
+    #showcase {
         margin-bottom: 80px;
     }
 
@@ -165,12 +167,12 @@ header .container .btn-mobile {
 }
 
 /*------ Features----------*/
-.features {
+#features {
     background-color: #eff0fc;
     padding: 80px;
 }
 
-    .features .container {
+    #features .container {
         display: block;
         text-align: center;
     }

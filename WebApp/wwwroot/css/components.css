@@ -193,7 +193,7 @@ a {
 }
 
     a:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
 /*------ Link ----------*/
 .menu-link {
@@ -228,6 +228,7 @@ a {
     background: #6366F1;
     color: #FFFFFF;
     border: none;
+    text-decoration:none;
 }
 
     .btn-theme:hover {
