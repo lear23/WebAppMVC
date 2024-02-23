@@ -16,5 +16,7 @@
 //        }
 //    }
 //}
+
+// resize gör att menu mobil stängs så snabb som att man flitta på skärmen
 //window.addEventListener('resize', checkScreenSize);
 //checkScreenSize();

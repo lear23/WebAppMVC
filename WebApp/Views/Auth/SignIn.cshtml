@@ -1,0 +1,52 @@
+﻿@model SignInViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+<link rel="stylesheet" href="~/css/signIn.css" asp-append-version="true" />
+
+<partial name="~/Views/Shared/Header&footerSections/_Header.cshtml" />
+
+<section class="signIn">
+
+    <div class="container">
+        <form method="post" class="sigInForm" asp-controller="Auth" asp-action="SignIn" novalidate>
+           <div class="errorEmail">
+               @Model.ErrorMessage
+           </div>
+
+            <h1>Welcome Back</h1>
+            <p>Don’t have an account yet? <a asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
+
+            <div class="signin-box">
+                <label asp-for="Form.Email"><b>Email</b></label>
+                <span asp-validation-for="Form.Email"></span>
+                <input asp-for ="Form.Email" placeholder="Enter your email address">
+            </div>
+
+            <div class="signin-box">
+                <label asp-for="Form.Password"><b>Password</b></label>
+                <span asp-validation-for="Form.Password"></span>
+                <input asp-for="Form.Password" placeholder="********">
+            </div>
+
+
+            <div>
+                <input asp-for="Form.RememberMe" type="checkbox">
+                <label asp-for="Form.RememberMe" for="checkbox">Remember Me</label>
+            </div>
+            
+            <button class="btn-theme">@Model.Title</button>
+            <a class="forgot" asp-controller="Account" asp-action="Forgot">Forgot your password?</a>
+            <hr>
+            <h5><b>Or sign in with your social network</b></h5>
+            <div class="networkButtons">
+                <button class="btn-gray"><img src="images/bxl-google.svg" alt="">Google</button>
+                <button class="btn-gray"><img src="images/bxl-facebook.svg" alt="">Facebook</button>
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+<partial name="~/Views/Shared/Header&footerSections/_Footer.cshtml" />

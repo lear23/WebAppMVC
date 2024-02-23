@@ -5,6 +5,45 @@
         <div id="menu">
             <nav>
                 <a href="#showcase" class="menu-link">Overview</a>
+                <a href="#features" class="menu-link">Features</a>             
+                @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
+                {
+                    <a href="@Url.Content("~/contact.html")" class="menu-link">Contact</a>
+                }
+            </nav>
+        </div>
+
+        <div class="btn-switch">
+            <label>Light</label>
+            <label for="switch-mode" class="switch">
+                <input type="checkbox" id="switch-mode" />
+                <span class="slider round"></span>
+            </label>
+            <label>Dark</label>
+        </div>
+        
+        @if (ViewContext.RouteData.Values["Controller"]!.ToString() != "Auth")
+        {
+            <div class="account-buttons">
+                <a asp-controller="Auth" asp-action="SignIn" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
+                <a asp-controller="Auth" asp-action="SignUp" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a>
+            </div>
+        }
+       
+    
+    </div>
+</header>
+
+
+ @*  -----------------------MOBIL ?----------------------  *@
+
+
+@* <header>
+    <div class="container">
+        <a id="logo" href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/images/logoSilcicon.svg")" alt=""></a>
+        <div id="menu" class="hide">
+            <nav>
+                <a href="#showcase" class="menu-link">Overview</a>
                 <a href="#features" class="menu-link">Features</a>
                 <a href="@Url.Content("~/contact.html")" class="menu-link">Contact</a>
             </nav>
@@ -18,38 +57,16 @@
             </label>
             <label>Dark</label>
         </div>
-        <div class="account-buttons">
-            <a href="@Url.Content("~/signIn.html")" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
-            <a href="@Url.Content("~/createAccount.html")" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a>
+        <div id="account-buttons" class="hide">
+             <a href="@Url.Content("~/signIn.html")" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
+            <a href="@Url.Content("~/createAccount.html")" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a> 
         </div>
+        <button onclick="toggleMenu()" class="btn-mobilemenu">
+            <i class="fa-regular fa-bars"></i>
+        </button>
     </div>
-</header>
-
-
-
-@* <header>
-    <div class="container">
-        <a id="logo" href="home.html"><img src="~/images/logoSilcicon.svg" alt=""></a>
-        <div id="menu">
-            <nav>
-                <a href=".showcase" class="menu-link">Overview</a>
-                <a href=".features" class="menu-link">Features</a>
-                <a href="contact.html" class="menu-link">Contact</a>
-            </nav>
-        </div>
-
-        <div class="btn-switch">
-            <label>Light</label>
-            <label for="switch-mode" class="switch">
-                <input type="checkbox" id="switch-mode" />
-                <span class="slider round"></span>
-            </label>
-            <label>Dark</label>
-        </div>
-        <div class="account-buttons">
-            <a href="signIn.html" class="btn-gray"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
-            <a href="createAccount.html" class="btn-theme"><i class="fa-regular fa-user"></i><span>Sign up</span></a>
-        </div>
-    </div>
-
 </header> *@
+
+
+
+

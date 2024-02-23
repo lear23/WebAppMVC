@@ -1,0 +1,97 @@
+﻿
+@model SignUpViewModel
+@{
+    ViewData["Title"] = Model.Title;
+}
+<link rel="stylesheet" href="~/css/signUp.css" asp-append-version="true" />
+<partial name="~/Views/Shared/Header&footerSections/_Header.cshtml" />
+
+<section id="createAccount">
+    <div class="container">
+        <form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
+            <h1>Create Account</h1>
+            <p class="text-xs">Already have an acount? <a asp-controller="Auth" asp-action="SignIn">Sign in here.</a></p>
+
+            <div class="klientInfo">
+                <div class="klientbox">
+                    <label asp-for="Form.FirstName"><b>First name</b></label>
+                    <span asp-validation-for="Form.FirstName"></span>
+                    <input asp-for="Form.FirstName" placeholder="Enter your first name">
+                </div>
+                <div class="klientbox">
+                    <label asp-for="Form.LastName"><b>Last name</b></label>
+                    <span asp-validation-for="Form.LastName"></span>
+                    <input asp-for="Form.LastName"  placeholder="Enter your last name">
+                </div>
+            </div>
+            <div class="createBox">
+                <label asp-for="Form.Email"><b>Email address</b></label>
+                <span asp-validation-for="Form.Email"></span>
+                <input asp-for="Form.Email"  placeholder="Enter your email address">
+            </div>
+            <div class="createBox">
+                <label asp-for="Form.Password"><b>Password</b></label>
+                <span asp-validation-for="Form.Password"></span>
+                <input asp-for="Form.Password" placeholder="********">
+            </div>
+            <div class="createBox">
+                <label asp-for="Form.ConfirmPassword"><b>Confirm Password</b></label>
+                <span asp-validation-for="Form.ConfirmPassword"></span>
+                <input asp-for="Form.ConfirmPassword" placeholder="********">
+            </div>
+
+            <div>
+                <input asp-for="Form.TermsConditions" type="checkbox">
+                <label asp-for="Form.TermsConditions" for="checkbox">I agree to the <a asp-controller="About" asp-action="Terms">Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a>.</label>
+
+            </div>
+                <span asp-validation-for="Form.TermsConditions"></span>
+
+                <button class="btn-theme" type="submit">@Model.Title</button>
+                       
+        </form>
+
+    </div>
+
+</section>
+
+
+<partial name="~/Views/Shared/Header&footerSections/_Footer.cshtml" />
+
+@* 
+<section id="createAccount">
+    <div class="container">
+        <form method="post" asp-controller="Auth" asp-action="SignUp">
+            <h1>Create Account</h1>
+
+            <p class="text-xs">Already have an acount? <a href="#">Sign in here.</a></p>
+            <div class="klientInfo">
+                <div class="klientbox">
+                    <label><b>First name</b></label>
+                    <input type="text" placeholder="Enter your first name">
+                </div>
+                <div class="klientbox">
+                    <label><b>Last name</b></label>
+                    <input type="text" placeholder="Enter your last name">
+                </div>
+            </div>
+            <div class="box">
+                <label><b>Email address</b></label>
+                <input type="email" placeholder="Enter your email address">
+            </div>
+            <div class="box">
+                <label><b>Password</b></label>
+                <input type="password" placeholder="********">
+            </div>
+            <div class="box">
+                <label><b>Confirm Password</b></label>
+                <input type="password" placeholder="********">
+            </div>
+            <input type="checkbox">
+            <label for="checkbox">I agree to the <a href="#">Terms</a> & <a href="#">Conditions</a></label>
+            <a href=""><button class="btn-theme">Sign Up</button></a>
+        </form>
+
+    </div>
+
+</section> *@
