@@ -4,6 +4,8 @@
     ViewData["Title"] = Model.Title;
 }
 <link rel="stylesheet" href="~/css/signUp.css" asp-append-version="true" />
+
+
 <partial name="~/Views/Shared/Header&footerSections/_Header.cshtml" />
 
 <section id="createAccount">
@@ -58,40 +60,4 @@
 
 <partial name="~/Views/Shared/Header&footerSections/_Footer.cshtml" />
 
-@* 
-<section id="createAccount">
-    <div class="container">
-        <form method="post" asp-controller="Auth" asp-action="SignUp">
-            <h1>Create Account</h1>
-
-            <p class="text-xs">Already have an acount? <a href="#">Sign in here.</a></p>
-            <div class="klientInfo">
-                <div class="klientbox">
-                    <label><b>First name</b></label>
-                    <input type="text" placeholder="Enter your first name">
-                </div>
-                <div class="klientbox">
-                    <label><b>Last name</b></label>
-                    <input type="text" placeholder="Enter your last name">
-                </div>
-            </div>
-            <div class="box">
-                <label><b>Email address</b></label>
-                <input type="email" placeholder="Enter your email address">
-            </div>
-            <div class="box">
-                <label><b>Password</b></label>
-                <input type="password" placeholder="********">
-            </div>
-            <div class="box">
-                <label><b>Confirm Password</b></label>
-                <input type="password" placeholder="********">
-            </div>
-            <input type="checkbox">
-            <label for="checkbox">I agree to the <a href="#">Terms</a> & <a href="#">Conditions</a></label>
-            <a href=""><button class="btn-theme">Sign Up</button></a>
-        </form>
-
-    </div>
-
-</section> *@
+@await Html.PartialAsync("_validationScriptPartial")
